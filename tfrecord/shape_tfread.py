@@ -7,6 +7,7 @@ import skimage.io as io
 samples_num = 32
 
 tfrecords_filename = 'shape_test.tfrecords'
+#tfrecords_filename = 'shape_train.tfrecords'
 
 def read_and_decode(filename_queue, batch_size):
     
