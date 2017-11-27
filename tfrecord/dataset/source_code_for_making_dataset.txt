@@ -1,0 +1,2 @@
+for making this dataset i have used
+https://agray3.github.io/2016/11/29/Demystifying-Data-Input-to-TensorFlow-for-Deep-Learning.html
