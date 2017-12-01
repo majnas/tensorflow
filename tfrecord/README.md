@@ -4,7 +4,7 @@ In this folder there are codes related to reading dataset images and converting 
 
 ### How to use:
 
-Suppose we have a dataset contain images related to triangles and squares in two parts (train and test). We must place images in their corrosponding folders to make correct tfrecord files (shape_train.tfrecord and shape_test.tfrecord)
+Suppose we have a dataset contains images related to triangles and squares in two parts (train and test). We must place images in their corrosponding folders to make correct tfrecord files (shape_train.tfrecord and shape_test.tfrecord)
 
     dataset
        '
