@@ -23,5 +23,5 @@ First part training
 
 `python shape_tfwrite.py` to make tfrecord file
 
-`python shape_tfwrite.py` to read tfrecord and restore dataset with differnt batches in dataset_restored1 and dataset_restored2
+`python shape_tfread.py` to read tfrecord and restore dataset with differnt batches in dataset_restored1 and dataset_restored2
 
