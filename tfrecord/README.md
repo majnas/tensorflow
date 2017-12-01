@@ -5,8 +5,8 @@ How to use:
 Suppose we have a dataset contain images related to triangles and squares in two parts.
 We must place images in their corrosponding folders to make correct tfrecord files
 First part training
----- dataset
-       '
+
+    dataset
        '
        '---- train
        '       '
@@ -17,4 +17,3 @@ First part training
                '
                '---- squares
                '---- triangles
-
