@@ -5,6 +5,6 @@ In this folder there are codes related to training a convolutional neural networ
 
 ### How to use:
 
-Make your own dataset and convert them to tfrecord using this [code](https://github.com/shelhamer/fcn.berkeleyvision.org). or use my tfrecord files (shape_train.tfrecord and shape_test.tfrecord)
+Make your own dataset and convert them to tfrecord using this [code](https://github.com/m-nasiri/tensorflow/tree/master/tfrecord). or use my tfrecord files (shape_train.tfrecord and shape_test.tfrecord)
 
 `python shape_tfwrite.py` to train the network.
