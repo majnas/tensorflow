@@ -1,6 +1,6 @@
 ###############################################################################
 #coder: Majid Nasiri
-#github: https://github.com/m-nasiri/tensorflow/save_restore_model
+#github: https://github.com/m-nasiri/tensorflow/save_and_restore_models
 #date: 2017-December-11
 ###############################################################################
 
