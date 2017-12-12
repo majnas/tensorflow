@@ -6,4 +6,4 @@ In this folder the `main.py` code is related to training a deep neural network a
 
 * First run `python main.py` to trian the network and store logs signals of graph model.
 * Second while training the model or after training run `$ tensorboard --logdir=logs/`.
-* launch your browser and go to tensorboard address (for example http://familypc:6006).
+* launch your browser and go to tensorboard address (for example http://pcname:6006).
