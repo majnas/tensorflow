@@ -21,7 +21,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("data/", one_hot=True)
 
 # path to save checkpoints
-checkpoint_path = "model/model.ckpt"
+checkpoint_path = "./model/model.ckpt"
 
 # define convolutional neural network
 def mnist_model():
@@ -87,15 +87,15 @@ def mnist_model():
     
     
     # Training Parameters
-    n_epoch = 2
+    n_epoch = 10
     batch_size = 128
     display_step = 10
     
     # Create a session for running operations in the Graph.
     with tf.Session() as sess:
         
-        # save all of ckeckpoints (a checkpoint per epoch)
-        saver = tf.train.Saver(max_to_keep=None)
+        # save 4 last ckeckpoints 
+        saver = tf.train.Saver(max_to_keep=4)
     
         # Initialize the variables
         sess.run(tf.global_variables_initializer())
