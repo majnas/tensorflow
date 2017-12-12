@@ -1,12 +1,12 @@
-###############################################################################
+#-----------------------------------------------------------------------------#
 #coder: Majid Nasiri
 #github: https://github.com/m-nasiri/tensorflow/save_and_restore_models
 #date: 2017-December-11
-###############################################################################
+#-----------------------------------------------------------------------------#
 
 """
     This code is for learning how to save a trained convolutional neural 
-    network and restore and reuse it.
+    network.
 """
 
 from __future__ import absolute_import
@@ -18,7 +18,7 @@ import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
 # load mnist dataset
-mnist = input_data.read_data_sets("data/", one_hot=True)
+mnist = input_data.read_data_sets("./data/", one_hot=True)
 
 # path to save checkpoints
 checkpoint_path = "./model/model.ckpt"
@@ -38,6 +38,7 @@ def mnist_model():
     X = tf.placeholder(tf.float32, shape=[None, 784], name="X")
     x = tf.reshape(X, [-1, 28, 28, 1])
     Y = tf.placeholder(tf.float32, shape=[None, 10], name="Y")
+    keep_prob = tf.placeholder(tf.float32, name='keep_prob')
 
     # Convolution Layer 1
     with tf.name_scope('conv1') as scope:
@@ -62,6 +63,7 @@ def mnist_model():
         pool_flat = tf.reshape(pool, shape=[-1, (7 * 7 * nF2)])
         fc = tf.matmul(pool_flat, weights)
         fc = tf.nn.relu(fc + biases, name=scope)
+        fc = tf.nn.dropout(fc, keep_prob= keep_prob)
     
     # Fully Connected Layer 2
     with tf.name_scope('fc2') as scope:
@@ -72,29 +74,29 @@ def mnist_model():
 
 
     # this needs to be minimised by adjusting weights and biases
-    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y))
+    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y), name='loss')
     
     # define training step which minimises cross entropy
     optimizer = tf.train.AdamOptimizer(learning_rate = 0.001).minimize(loss)
 
     # argmax gives index of highest entry in vector
-    correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(Y, 1))
+    correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(Y, 1), name='correct_prediction')
     
     # get mean of all entries in correct prediction, the higher the better
-    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32), name='accuracy')
 
     print('The network graph created')
     
     
     # Training Parameters
-    n_epoch = 10
+    n_epoch = 5
     batch_size = 128
     display_step = 10
     
     # Create a session for running operations in the Graph.
     with tf.Session() as sess:
         
-        # save 4 last ckeckpoints 
+        # save all of ckeckpoints (a checkpoint per epoch)
         saver = tf.train.Saver(max_to_keep=4)
     
         # Initialize the variables
@@ -103,18 +105,18 @@ def mnist_model():
         # Train for n_epochs
         for epoch in range(n_epoch):
             
-            for itr in range(5):#mnist.train.num_examples//batch_size
+            for itr in range(mnist.train.num_examples//batch_size):
                 
                 # fetch a batch of train images and labels
                 batch_x, batch_y = mnist.train.next_batch(batch_size)
                 
                 # Run the training step
-                feed_dict={X: batch_x, Y: batch_y}
+                feed_dict={X: batch_x, Y: batch_y, keep_prob: 0.6}
                 sess.run(optimizer, feed_dict=feed_dict)
                 
                 if (itr % display_step == 0):
                     # Evaluate model on training batch
-                    feed_dict={X: batch_x, Y: batch_y}
+                    feed_dict={X: batch_x, Y: batch_y, keep_prob: 1.0}
                     loss_val, acc_val = sess.run([loss, accuracy], feed_dict=feed_dict)
                     print('Epoch', epoch, 'Minibatch loss', loss_val,
                           'Batch Accuracy:', acc_val)
@@ -123,7 +125,7 @@ def mnist_model():
             saver.save(sess, checkpoint_path, global_step=epoch)
         
         # fetch whole test images and labels
-        feed_dict={X: mnist.test.images, Y: mnist.test.labels}
+        feed_dict={X: mnist.test.images, Y: mnist.test.labels, keep_prob: 1.0}
         
         # feed the model with all test images and labels
         acc_val = sess.run(accuracy, feed_dict=feed_dict)
