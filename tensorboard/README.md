@@ -1,10 +1,8 @@
 ## Monitoring model's parameters using Tensorboard
 
-In this folder there are codes related to training a deep neural network with two convolutional layers and two 
-fully connected layers. In this code the aim is to show how to save a model in different epochs of training then 
-restoring one of saved models and feed input to it and print the accuracy.
+In this folder the `main.py` code is related to training a deep neural network and monitoring parameters of network while training. In other words, network parameters like weights/biases/activations for each layer and loss/accuracy values are stored and prepared to use with Tensorboard tool for monitoring.
 
 ### How to use:
 
-* First run `python train_and_save.py` to trian the network and save last 4 model checkpoint in "./model/" folder.
-* Second run `python restore_and_reuse.py` to restore the network from saved model and feed the network with all test images to calculate accuracy
+* First run `python main.py` to trian the network and storing logs signals of graph model.
+* Second while training the model of after that run `$tensorboard --logdir=logs/` to address tensorboard datas for 
