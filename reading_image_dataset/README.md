@@ -61,6 +61,5 @@ Suppose we have a dataset contains images related to different category in two p
  
 In this example we have prepared a python code to make a synthatic image dataset. Using this code its easy to make dataset for testing the example code for reading dataset.
 
-`python make_dataset.py` to make synthatic dataset in dataset folder
- 
-`python read_dataset.py` to read tfrecord and restore dataset with differnt batches in dataset_restored1 (batch_size = 4) and dataset_restored2 (batch_size = 8).
+run `$ python make_dataset.py` to make synthatic dataset.
+run `$ python read_dataset.py` to define a queue in the background to read images from dataset folder and restore them in dataset_restored folder.
