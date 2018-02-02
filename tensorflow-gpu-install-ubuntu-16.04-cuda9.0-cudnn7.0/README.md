@@ -1,4 +1,4 @@
-# Tensorflow GPU install on ubuntu 16.04 CUDA 9.0 cudnn v7.0
+## Tensorflow GPU install on ubuntu 16.04 CUDA 9.0 cudnn v7.0
 #### Base instruction is form https://github.com/williamFalcon
 
 These instructions are intended to set up a deep learning environment for GPU-powered tensorflow.    
@@ -41,6 +41,7 @@ sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy pytho
 2. install nvidia drivers 
 ``` bash
 # The 16.04 installer works with 16.10.
+# You can use cuda-9.1 if you don't want to install tensorflow_gpu from pre-compiled whl file
 wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
 or
 download cuda9.0 form https://developer.nvidia.com/cuda-90-download-archive (See the below picture)
