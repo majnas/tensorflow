@@ -1,6 +1,4 @@
-# Tensorflow GPU install on ubuntu 16.04 CUDA 9.0 cudnn v7.0   
-# Base instruction is form https://github.com/williamFalcon
-## Base instruction is form https://github.com/williamFalcon
+# Tensorflow GPU install on ubuntu 16.04 CUDA 9.0 cudnn v7.0
 ### Base instruction is form https://github.com/williamFalcon
 
 These instructions are intended to set up a deep learning environment for GPU-powered tensorflow.    
