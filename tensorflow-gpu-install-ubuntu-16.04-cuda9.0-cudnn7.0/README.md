@@ -50,8 +50,8 @@ apt-get update
 #  Added this to make sure we don't drag down the newest version of cuda!
 apt-get install cuda=9.0.176-1 -y
 ```    
-![alt text](https://github.com/m-nasiri/tensorflow-gpu-install-ubuntu-16.04/blob/master/images/tk.png)
-![alt text](https://github.com/m-nasiri/tensorflow-gpu-install-ubuntu-16.04/blob/master/images/tk2.png)
+![alt text](https://github.com/m-nasiri/tensorflow-gpu-install-ubuntu-16.04/blob/master/images/tk_deb.png)
+![alt text](https://github.com/m-nasiri/tensorflow-gpu-install-ubuntu-16.04/blob/master/images/tk_deb2.png)
 
 2a. reboot Ubuntu
 ```bash
@@ -70,7 +70,7 @@ nvidia-smi
 ``` bash
 wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run
 or
-download cuda9.0 form https://developer.nvidia.com/cuda-90-download-archive
+download cuda9.0 form https://developer.nvidia.com/cuda-90-download-archive (See the below picture)
 
 sudo sh cuda_9.0.176_384.81_linux.run   # press and hold s to skip agreement   
 
@@ -104,6 +104,8 @@ sudo sh cuda_9.0.176_384.81_linux.run   # press and hold s to skip agreement
 # Copying samples to /home/liping/NVIDIA_CUDA-9.0_Samples now…
 # Finished copying samples.
 ```    
+![alt text](https://github.com/m-nasiri/tensorflow-gpu-install-ubuntu-16.04/blob/master/images/tk_runfile.png)
+![alt text](https://github.com/m-nasiri/tensorflow-gpu-install-ubuntu-16.04/blob/master/images/tk_runfile2.png)
 
 4. Install cudnn   
 ``` bash
