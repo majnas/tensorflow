@@ -1,7 +1,10 @@
 ### How to use:
  
-In this [task](https://github.com/m-nasiri/tensorflow/tree/master/reading_image_dataset) we have learned how to define a queue in the background in order to read images from dataset folder. This folder is contains codes related to making synthatic symbol images dataset and reading the dataset using .... and training a Convolutional Neural Network to classify input images.
-Running `$ python make_dataset.py` will make a dataset in the dataset structure looks something like this.
+In this [task](https://github.com/m-nasiri/tensorflow/tree/master/reading_image_dataset) we have learned how to define a queue in the background in order to read images from dataset folder. This folder is contains codes related to making synthatic symbol images dataset, defining queues to load image filenames, preprocess them with multiple threads and apply the preprocessing in parallel, and training a Convolutional Neural Network to classify input images which category they are belong to.
+By running `$ python make_dataset.py` will make a dataset in the dataset structure looks something like this.
+
+Behind the scenes, queues will load the filenames, preprocess them with multiple threads and apply the preprocessing in parallel, and then batch the data
+        
 
      dataset
      '
