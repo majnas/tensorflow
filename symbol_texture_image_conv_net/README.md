@@ -62,5 +62,6 @@ Running `$ python make_symbol_texture_image_dataset.py` will make a dataset. Dat
                      
  
 Samples of images in datast.
+![alt text](https://github.com/m-nasiri/tensorflow/blob/master/symbol_texture_image_conv_net/images/images.png)
 
 ![alt text](https://github.com/m-nasiri/tensorflow/blob/master/symbol_texture_image_conv_net/images/acc_loss.png)
