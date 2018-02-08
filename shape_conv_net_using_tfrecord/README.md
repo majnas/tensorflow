@@ -1,7 +1,7 @@
 
 ## Training a convolutional neural network using train/test tfrecord files
 
-In this folder there are codes related to training a convolutional neural network to classify images. In the dataset a triangle or sqaure is in each image, then we train a CNN to classify what's the class of image (triangle or square). In order to feed the network first we converted the train and test parts of dataset (using ) to shape_train.tfrecord and shape_test.tfrecord binary files.
+In this folder there are codes related to training a convolutional neural network to classify images. In the dataset, a triangle or sqaure is in each image, then we train a CNN to classify what's the class of image (triangle or square). In order to feed the network first we converted the train and test parts of dataset (using ) to shape_train.tfrecord and shape_test.tfrecord binary files.
 
 ### How to use:
 
