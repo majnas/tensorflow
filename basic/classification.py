@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------#
 # coder: Majid Nasiri
-# github: https://github.com/m-nasiri/tensorflow/tree/master/
+# github: https://github.com/m-nasiri/tensorflow/blob/master/basic/classification.py
 # date: 2018-Feb-11            
 #-----------------------------------------------------------------------------#
 
