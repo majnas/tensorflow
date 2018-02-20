@@ -25,12 +25,11 @@ relu = tf.nn.relu(WXb)
 
 # create Session
 with tf.Session() as sess:
+        
+    # init variables
+    sess.run(tf.global_variables_initializer())
     
-    feed_dict = {W: np.random.randn(2,10),
-                 X: np.random.randn(10,6),
-                 b: np.random.randn(2,6),}
-
+    # feed placeholders
+    feed_dict = {X: np.random.randn(10,6)}
     relu_val = sess.run(relu, feed_dict=feed_dict)
-    
-    
-    
+  
