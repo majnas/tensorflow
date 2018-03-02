@@ -8,7 +8,7 @@
 | Encoder | conv | 14x14x20 |
 | Encoder | pool | 7x7x20 |
 | Encoder | conv | 7x7x16 |
-| latent representation | pool | 4x4x16 |
+| Latent representation | pool | 4x4x16 |
 | Decoder | unpool | 7x7x16 |
 | Decoder | conv | 7x7x16 |
 | Decoder | unpool | 14x14x20 |
