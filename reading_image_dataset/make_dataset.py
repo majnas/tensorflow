@@ -7,7 +7,7 @@
  Categories are created according to polygon_list variable, and the number of 
  image for each category is n_samples_per_category.
 """
-import time
+#import time
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
