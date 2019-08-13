@@ -8,7 +8,7 @@
 """
     In this code we want to use a convolutinal autoencoder to transfer image 
     from pixel space to dense features representation with smaller spatial 
-    sizes then reconstruct image from dense features.
+    sizes then reconstruct image from dense features. 
 """
 
 from __future__ import absolute_import
