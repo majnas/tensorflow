@@ -1,7 +1,7 @@
 #------------------------------------------------------------------------------------------#
-#coder: Majid Nasiri
-#github: https://github.com/m-nasiri/tensorflow/tree/master/symbol_texture_image_conv_net
-#date: 2018-Feb-04
+# coder: Majid Nasiri
+# github: https://github.com/m-nasiri/tensorflow-2.0/
+# date: 2020-January-16
 #------------------------------------------------------------------------------------------#
 
 import numpy as np
